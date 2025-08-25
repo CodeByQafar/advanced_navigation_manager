@@ -1,16 +1,18 @@
 part of "navigation_manager.dart";
 
-enum RouteName { home, firstDemoScreen, secondDemoScreen }
+enum RouteName { home, firstDemoScreen, secondDemoScreen, thirdDemoScreenView }
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     String? name = settings.name;
     if (name == RouteName.home.withParaf) {
-      return MaterialPageRoute(builder: (context) => HomeView());
+      return FadeRoute(child: HomeView(), settings: settings);
     } else if (name == RouteName.firstDemoScreen.withParaf) {
-      return MaterialPageRoute(builder: (context) => FirstDemoScreenView());
+      return FadeRoute(child: FirstDemoScreenView(), settings: settings);
     } else if (name == RouteName.secondDemoScreen.withParaf) {
-      return MaterialPageRoute(builder: (context) => SecondDemoScreenView());
+      return FadeRoute(child: SecondDemoScreenView(), settings: settings);
+    } else if (name == RouteName.thirdDemoScreenView.withParaf) {
+      return FadeRoute(child: ThirdDemoScreenView(), settings: settings);
     } else {
       return throw NavigationException("Route not found");
     }
