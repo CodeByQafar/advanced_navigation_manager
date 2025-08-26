@@ -2,7 +2,7 @@ import '../../../core/mixins/navigation_mixin.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/navigation/navigation_manager.dart';
-import '../../../core/ui/snackbar.dart';
+import '../../../core/components/snackbar.dart';
 import '../widgets/custom_card_button.dart';
 
 class HomeView extends StatefulWidget {

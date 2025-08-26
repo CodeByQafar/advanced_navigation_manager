@@ -18,6 +18,8 @@ class MyApp extends StatelessWidget with NavigationMixinStateless {
  
   @override
   Widget build(BuildContext context) {
+
+
     return MaterialApp(
       onGenerateRoute: RouteGenerator.generateRoute,
       navigatorKey: router.navigationGlobalKey,

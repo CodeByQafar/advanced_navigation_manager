@@ -1,7 +1,7 @@
 import '../../../core/mixins/navigation_mixin.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/ui/snackbar.dart';
+import '../../../core/components/snackbar.dart';
 
 class SecondDemoScreenView extends StatefulWidget  {
    SecondDemoScreenView({super.key});
