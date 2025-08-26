@@ -36,7 +36,7 @@ class _HomeViewState extends State<HomeView> with NavigationMixinStateful {
                       "Push to second demo page and pass data between routes",
                   onPressed: () async {
                     /// We can send any type of data using the arguments property.
-                    /// After [SecondDemoScreenView] pops, the page result will be 
+                    /// After [SecondDemoScreenView] pops, the page result will be
                     /// shown in a snackbar.
                     String result = await router.goToPage(
                       RouteName.secondDemoScreen,
@@ -50,8 +50,13 @@ class _HomeViewState extends State<HomeView> with NavigationMixinStateful {
             CustomCardButton(
               message: "Push to third demo page and replace current screen",
               onPressed: () {
-                /// [replacePageTo] works the same as [popAndPushToPage]
+                /// [replacePageTo] works like [popAndPushToPage]
                 // router.replacePageTo(RouteName.thirdDemoScreenView);
+                // When using `replacePageTo`, if you have a custom animation like
+                // `FadeRoute`, the transition will be visible because the page is being replaced.
+                // But with `popAndPushToPage`, the animation will not be visible, since the page
+                // attaches instantly. This is a small but important difference to keep in mind when designing
+                // navigation animations.
                 router.popAndPushToPage(RouteName.thirdDemoScreenView);
               },
             ),

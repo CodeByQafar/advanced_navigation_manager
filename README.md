@@ -66,15 +66,15 @@ router.goToPage(RouteName.firstDemoScreen);
 In normal push operations, when navigating with URLs like `/home` or `/`, we risk getting errors due to typos. When we convert this to an enum and add this feature with an extension, things become safer.
 
 ```dart
-enum RouteName { 
-  home, 
-  firstDemoScreen, 
-  secondDemoScreen, 
-  thirdDemoScreenView 
+enum RouteName {
+   home,
+   firstDemoScreen,
+   secondDemoScreen,
+   thirdDemoScreenView
 }
 
 extension RouteNameExtension on RouteName {
-  String get withParaf => "/$name";  // "/home", "/firstDemoScreen" format
+   String get withParaf => "/$name";  // "/home", "/firstDemoScreen" format
 }
 ```
 
@@ -262,6 +262,10 @@ class FirstDemoScreenView extends StatelessWidget with NavigationMixinStateless 
 
 This project demonstrates `goToPage`, `popPage`, `replacePageTo`, `popAndPushToPage` functions and data transfer between pages with example screenshots.
 
+> ⚡ **Note**
+>
+> When using **`replacePageTo`**, if you have a custom animation like `FadeRoute`, the transition will be visible because the page is being replaced. But with **`popAndPushToPage`**, the animation will not be visible, since the page attaches instantly. This is a small but important difference to keep in mind when designing navigation animations.
+
 ### Sending Data:
 After a page is closed using the popPage function, the argument passed to popPage will be returned as the result.
 ```dart
@@ -275,11 +279,11 @@ String result = await router.goToPage(
 ```dart
 @override
 void didChangeDependencies() {
-  super.didChangeDependencies();
-  final args = ModalRoute.of(context)?.settings.arguments;
-  if (args != null) {
-    // Use the data
-  }
+   super.didChangeDependencies();
+   final args = ModalRoute.of(context)?.settings.arguments;
+   if (args != null) {
+      // Use the data
+   }
 }
 ```
 
