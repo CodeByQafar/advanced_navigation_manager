@@ -5,9 +5,9 @@ This project is an example of an advanced and centralized navigation manager for
 ## 📱 Example Screenshots
 
 <p float="left">
-  <img src="screenshots/1.gif" width="150" style="margin-right:10px;" />
-  <img src="screenshots/2.gif" width="150" style="margin-right:10px;" />
-  <img src="screenshots/3.gif" width="150" />
+  <img src="screenshots/1.gif" width="250" style="margin-right:20px;" />
+  <img src="screenshots/2.gif" width="250" style="margin-right:20px;" />
+  <img src="screenshots/3.gif" width="250" />
 </p>
 
 ## 📁 Project Folder Structure
